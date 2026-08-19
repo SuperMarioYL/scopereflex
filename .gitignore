@@ -32,3 +32,4 @@ _build_ctx.json
 # coverage
 coverage/
 .nyc_output/
+.prompt_*
