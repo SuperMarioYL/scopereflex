@@ -1,0 +1,34 @@
+{
+  "intent": "Add a login endpoint with session handling",
+  "files": [
+    { "path": "src/auth/login.ts", "purpose": "login route handler", "optional": false },
+    { "path": "src/auth/session.ts", "purpose": "session create/validate", "optional": false },
+    { "path": "src/api/client.ts", "purpose": "typed API client", "optional": false },
+    { "path": "src/utils/index.ts", "purpose": "barrel export for utils", "optional": false },
+    { "path": "src/utils/helpers.ts", "purpose": "misc helpers", "optional": false },
+    { "path": "src/api/v2/legacy.ts", "purpose": "legacy v2 shim", "optional": true },
+    { "path": "src/api/v2/legacy.test.ts", "purpose": "legacy v2 tests", "optional": true },
+    { "path": "src/components/Button.tsx", "purpose": "refactor shared button", "optional": true },
+    { "path": "src/components/Button.stories.tsx", "purpose": "button stories", "optional": true },
+    { "path": "docs/login.md", "purpose": "login docs", "optional": true },
+    { "path": "src/styles/login.css", "purpose": "login styles", "optional": true },
+    { "path": "CHANGELOG.md", "purpose": "changelog entry", "optional": true },
+    { "path": "README.md", "purpose": "readme update", "optional": true },
+    { "path": "src/auth/login.bench.ts", "purpose": "login benchmark", "optional": true }
+  ],
+  "steps": [
+    { "id": "1", "description": "Scaffold auth module", "optional": false },
+    { "id": "2", "description": "Implement login endpoint", "optional": false },
+    { "id": "3", "description": "Add session create/validate", "optional": false },
+    { "id": "4", "description": "Wire typed API client", "optional": false },
+    { "id": "5", "description": "Merge utils/helpers into utils/index", "optional": false },
+    { "id": "6", "description": "Refactor shared Button component", "optional": true },
+    { "id": "7", "description": "Add legacy v2 shim", "optional": true },
+    { "id": "8", "description": "Write Button stories", "optional": true },
+    { "id": "9", "description": "Write login docs", "optional": true },
+    { "id": "10", "description": "Benchmark login route", "optional": true },
+    { "id": "11", "description": "Update CHANGELOG", "optional": true },
+    { "id": "12", "description": "Add login styles", "optional": true }
+  ],
+  "output_length_tokens": 3200
+}

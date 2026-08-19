@@ -1,0 +1,56 @@
+{
+  "name": "scopereflex",
+  "version": "0.1.0",
+  "description": "Counterfactual contraction-reflex for over-producing coding agents. Forks a do-less plan variant and surfaces a structural contraction-diff with a human acceptance gate.",
+  "type": "module",
+  "license": "MIT",
+  "author": "SuperMarioYL",
+  "homepage": "https://github.com/SuperMarioYL/scopereflex",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SuperMarioYL/scopereflex.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SuperMarioYL/scopereflex/issues"
+  },
+  "keywords": [
+    "coding-agent",
+    "agent",
+    "cli",
+    "contraction-diff",
+    "scope-control",
+    "plan-approval",
+    "developer-tools"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "main": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
+  "bin": {
+    "scopereflex": "./dist/src/index.js"
+  },
+  "files": [
+    "dist/src",
+    "SKILL.md",
+    "VERSION"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "lint": "tsc --noEmit",
+    "test": "tsc && node --test dist/tests/*.test.js",
+    "prepublishOnly": "npm run lint && npm run build"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^7.0.0",
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "diff": "^5.2.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/diff": "^5.2.0",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  }
+}
