@@ -1,0 +1,134 @@
+{
+  "schema": 1,
+  "name": "scopereflex",
+  "github": "https://github.com/SuperMarioYL/scopereflex",
+  "host": "scopereflex.lei6393.com",
+  "lang": {
+    "primary": "en",
+    "toggle": true
+  },
+  "accent": [
+    "#e6a144",
+    "#c97a2e"
+  ],
+  "content_version": "v0.1.0",
+  "generated_at": "2026-08-19T08:47:51Z",
+  "hero": {
+    "eyebrow": {
+      "zh": "更少文件 · 更短输出 · 更小爆炸半径 · 动手前先点头",
+      "en": "Fewer files · Less output · Smaller blast · Accept before it runs"
+    },
+    "headline": {
+      "zh": "Agent 想写 14 个文件？\n先只让它写 4 个",
+      "en": "Agent wanted 14 files?\nLet it write 4 first"
+    },
+    "sub": {
+      "zh": "ScopeReflex 读你代理的计划，写出一个文件更少、输出更短的版本，并在它动手前把前后对比的数字摆到你面前等你点头。",
+      "en": "ScopeReflex reads your agent's plan, writes a smaller one with fewer files and less output, and lays the before→after counts in front of you to accept before it runs."
+    },
+    "command": "scopereflex contract plan.json",
+    "cta": {
+      "zh": "开始用",
+      "en": "Get started"
+    },
+    "ctaGithub": {
+      "zh": "GitHub",
+      "en": "GitHub"
+    },
+    "scroll": {
+      "zh": "看看怎么收",
+      "en": "See how it trims"
+    }
+  },
+  "advantages": [
+    {
+      "title": {
+        "zh": "批准前，先看清裁掉了多少",
+        "en": "See the trim before you approve"
+      },
+      "body": {
+        "zh": "代理一交出计划，ScopeReflex 就在旁边摆好一份更小的——文件、步骤、输出，逐项前后计数。你凭数字定范围，而不是凭“也许 14 个文件有点多”的感觉。",
+        "en": "The moment your agent hands over a plan, ScopeReflex sets a smaller one beside it — files, steps, and output, each counted before→after. You decide scope on numbers, not on a feeling that maybe 14 files is too many."
+      },
+      "chips": [
+        "› 文件、步骤、输出——前后对比",
+        "› 一张能截图的对比",
+        "› 凭数字点头，不凭感觉"
+      ]
+    },
+    {
+      "title": {
+        "zh": "接受、改、还是拒？每份计划都你说了算",
+        "en": "Accept, edit, or reject — your call, every plan"
+      },
+      "body": {
+        "zh": "在代理碰任何文件之前，收缩后的计划停在一道你掌控的提示后。照单全收、挑哪些文件留下、还是直接拒——只有你点头，才会把更小的计划写回去交给代理执行。",
+        "en": "Before the agent touches a file, the trimmed plan waits behind a prompt you control. Accept it whole, pick which files survive, or throw it out — only your accept writes the smaller plan back for the agent to run."
+      },
+      "chips": [
+        "› 你点头前，代理先等着",
+        "› 改的是裁剪，不是整份计划",
+        "› 接受才写出更小的计划"
+      ]
+    },
+    {
+      "title": {
+        "zh": "可选的文件和步骤？默认就砍掉",
+        "en": "Optional files and steps? Gone by default"
+      },
+      "body": {
+        "zh": "代理标记成可选的，自动砍掉；散落的辅助文件折回到隔壁那一个里。关键路径留着，那些凑数的根本到不了真正跑的那份计划。",
+        "en": "Anything the agent marked optional is trimmed automatically, and scattered helper files fold back into the one beside them. The critical path stays; the padding never reaches the plan that actually runs."
+      },
+      "chips": [
+        "› 可选项先砍",
+        "› 辅助文件折回隔壁",
+        "› 关键路径留着"
+      ]
+    },
+    {
+      "title": {
+        "zh": "没守护进程，没 key，没配置文件",
+        "en": "No daemon, no key, no config"
+      },
+      "body": {
+        "zh": "一个 CLI。把代理的计划用 JSON 或 markdown 喂进去，拿回更小的 JSON 计划——直接管道给你已经在跑的任何 harness。不用额外装东西，也没有后台嗡嗡作响。",
+        "en": "One CLI. Feed it your agent's plan as JSON or markdown, get the smaller plan back as JSON — pipe it into whatever harness you already run. Nothing to install beside, nothing humming in the background."
+      },
+      "chips": [
+        "› JSON 或 markdown 进",
+        "› JSON 出，接任意 harness",
+        "› 零后台进程"
+      ]
+    }
+  ],
+  "scene": {
+    "kind": "hub-nodes",
+    "nodes": [
+      "Claude Code",
+      "Cursor",
+      "Aider",
+      "Codex"
+    ]
+  },
+  "cta": {
+    "headline": {
+      "zh": "交出你代理本该提的那份 4 文件计划",
+      "en": "Ship the 4-file plan your agent should've proposed"
+    },
+    "sub": {
+      "zh": "一份计划进，一份更小的计划出，你点头裁剪。开源，一条命令跑通。",
+      "en": "One plan in, a smaller plan out, you accept the trim. Open source, runs in one command."
+    },
+    "button": {
+      "zh": "查看 GitHub",
+      "en": "View on GitHub"
+    }
+  },
+  "footer": {
+    "tag": {
+      "zh": "给过度生产的编码代理的“做更少”反射 · 开源 MIT",
+      "en": "The do-less reflex for over-producing coding agents · open source MIT"
+    }
+  }
+}
