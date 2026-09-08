@@ -1,0 +1,78 @@
+{
+  "name": "scopereflex",
+  "tagline": "Review a smaller plan before accepting the work.",
+  "architecture": {
+    "title": "How ScopeReflex works",
+    "nodes": [
+      {
+        "title": "JSON / Markdown plan",
+        "detail": "src/contract.ts"
+      },
+      {
+        "title": "Contraction rules",
+        "detail": "src/rules.ts"
+      },
+      {
+        "title": "Structural diff",
+        "detail": "src/manifest.ts"
+      },
+      {
+        "title": "Review gate",
+        "detail": "src/gate.ts"
+      }
+    ],
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ]
+    ]
+  },
+  "process": {
+    "title": "From input to a useful result",
+    "steps": [
+      {
+        "title": "Read plan",
+        "detail": "Files and optional work"
+      },
+      {
+        "title": "Apply rules",
+        "detail": "Dedup, merge and drop"
+      },
+      {
+        "title": "Review diff",
+        "detail": "Smaller structural manifest"
+      }
+    ],
+    "result": "The bundled plan contracts from 14 to 4 files; displayed token savings are estimated by the rule model."
+  },
+  "integrations": {
+    "title": "Supported input and output routes",
+    "items": [
+      {
+        "title": "Plan JSON",
+        "detail": "Files, optional flags and steps"
+      },
+      {
+        "title": "Markdown dialect",
+        "detail": "Lightweight plan input"
+      },
+      {
+        "title": "JSON / summary",
+        "detail": "Contraction difference"
+      },
+      {
+        "title": "Accepted plan",
+        "detail": "Separate output artifact"
+      }
+    ]
+  }
+}

@@ -1,7 +1,7 @@
 {
   "name": "scopereflex",
   "version": "0.1.0",
-  "description": "Counterfactual contraction-reflex for over-producing coding agents. Forks a do-less plan variant and surfaces a structural contraction-diff with a human acceptance gate.",
+  "description": "Apply deterministic scope-reduction rules to an agent plan and review the resulting file, step and output-estimate diff.",
   "type": "module",
   "license": "MIT",
   "author": "SuperMarioYL",

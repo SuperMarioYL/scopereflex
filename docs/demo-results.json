@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "source_revision": "1dde1b7da47a7c12fd293de66b46004d4af08c3c",
+  "scope": "Deterministic contraction of the complete bundled plan. Counts are structural and token values are heuristic estimates; no source code is edited or plan accepted.",
+  "steps": [
+    {
+      "label": "Recorded run",
+      "body": "Deterministic contraction of the complete bundled plan. Counts are structural and token values are heuristic estimates; no source code is edited or plan accepted.",
+      "command": "node dist/src/index.js contract examples/plan.json --summary",
+      "output": "ScopeReflex: 14→4 files, 3200→850 tokens (saved 2350 tokens)"
+    }
+  ]
+}

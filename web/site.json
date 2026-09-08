@@ -1,134 +1,215 @@
 {
-  "schema": 1,
+  "schema": 3,
   "name": "scopereflex",
   "github": "https://github.com/SuperMarioYL/scopereflex",
   "host": "scopereflex.lei6393.com",
+  "palette": "auto",
   "lang": {
     "primary": "en",
     "toggle": true
   },
-  "accent": [
-    "#e6a144",
-    "#c97a2e"
-  ],
-  "content_version": "v0.1.0",
-  "generated_at": "2026-08-19T08:47:51Z",
+  "meta": {
+    "visual_style": "neon-particle",
+    "demo_source": "docs/demo-results.json"
+  },
   "hero": {
-    "eyebrow": {
-      "zh": "更少文件 · 更短输出 · 更小爆炸半径 · 动手前先点头",
-      "en": "Fewer files · Less output · Smaller blast · Accept before it runs"
-    },
     "headline": {
-      "zh": "Agent 想写 14 个文件？\n先只让它写 4 个",
-      "en": "Agent wanted 14 files?\nLet it write 4 first"
+      "en": "Review a smaller plan before accepting the work.",
+      "zh": "接受任务前先检查更小的计划。"
     },
     "sub": {
-      "zh": "ScopeReflex 读你代理的计划，写出一个文件更少、输出更短的版本，并在它动手前把前后对比的数字摆到你面前等你点头。",
-      "en": "ScopeReflex reads your agent's plan, writes a smaller one with fewer files and less output, and lays the before→after counts in front of you to accept before it runs."
+      "en": "ScopeReflex derives a contracted variant of a JSON or Markdown plan and presents the structural difference for review.",
+      "zh": "ScopeReflex 从 JSON 或 Markdown 计划生成缩减版本，并展示结构差异供检查。"
     },
-    "command": "scopereflex contract plan.json",
-    "cta": {
-      "zh": "开始用",
-      "en": "Get started"
-    },
-    "ctaGithub": {
-      "zh": "GitHub",
-      "en": "GitHub"
-    },
-    "scroll": {
-      "zh": "看看怎么收",
-      "en": "See how it trims"
-    }
+    "href": "#quickstart"
   },
   "advantages": [
     {
       "title": {
-        "zh": "批准前，先看清裁掉了多少",
-        "en": "See the trim before you approve"
+        "en": "Compare alternatives",
+        "zh": "比较替代计划"
       },
       "body": {
-        "zh": "代理一交出计划，ScopeReflex 就在旁边摆好一份更小的——文件、步骤、输出，逐项前后计数。你凭数字定范围，而不是凭“也许 14 个文件有点多”的感觉。",
-        "en": "The moment your agent hands over a plan, ScopeReflex sets a smaller one beside it — files, steps, and output, each counted before→after. You decide scope on numbers, not on a feeling that maybe 14 files is too many."
-      },
-      "chips": [
-        "› 文件、步骤、输出——前后对比",
-        "› 一张能截图的对比",
-        "› 凭数字点头，不凭感觉"
-      ]
+        "en": "The original and contracted manifests are both retained.",
+        "zh": "同时保留原始和缩减 manifest。"
+      }
     },
     {
       "title": {
-        "zh": "接受、改、还是拒？每份计划都你说了算",
-        "en": "Accept, edit, or reject — your call, every plan"
+        "en": "Inspect every removal",
+        "zh": "检查删除内容"
       },
       "body": {
-        "zh": "在代理碰任何文件之前，收缩后的计划停在一道你掌控的提示后。照单全收、挑哪些文件留下、还是直接拒——只有你点头，才会把更小的计划写回去交给代理执行。",
-        "en": "Before the agent touches a file, the trimmed plan waits behind a prompt you control. Accept it whole, pick which files survive, or throw it out — only your accept writes the smaller plan back for the agent to run."
-      },
-      "chips": [
-        "› 你点头前，代理先等着",
-        "› 改的是裁剪，不是整份计划",
-        "› 接受才写出更小的计划"
-      ]
+        "en": "Rules record the rationale for contraction.",
+        "zh": "规则记录缩减理由。"
+      }
     },
     {
       "title": {
-        "zh": "可选的文件和步骤？默认就砍掉",
-        "en": "Optional files and steps? Gone by default"
+        "en": "Choose before writing",
+        "zh": "选择后再写入"
       },
       "body": {
-        "zh": "代理标记成可选的，自动砍掉；散落的辅助文件折回到隔壁那一个里。关键路径留着，那些凑数的根本到不了真正跑的那份计划。",
-        "en": "Anything the agent marked optional is trimmed automatically, and scattered helper files fold back into the one beside them. The critical path stays; the padding never reaches the plan that actually runs."
+        "en": "The gate separates review from accepted-plan output.",
+        "zh": "gate 将检查与已接受计划输出分开。"
+      }
+    }
+  ],
+  "demo": {
+    "title": {
+      "en": "Run it on a complete example",
+      "zh": "运行完整示例"
+    },
+    "note": {
+      "en": "Apply contract --summary to the complete bundled plan without writing an accepted plan.",
+      "zh": "对完整随仓计划执行 contract --summary，不写入已接受计划。"
+    },
+    "source": "https://github.com/SuperMarioYL/scopereflex/blob/main/docs/demo-results.json",
+    "steps": [
+      {
+        "label": "Recorded run",
+        "body": "Deterministic contraction of the complete bundled plan. Counts are structural and token values are heuristic estimates; no source code is edited or plan accepted.",
+        "command": "node dist/src/index.js contract examples/plan.json --summary",
+        "output": "ScopeReflex: 14→4 files, 3200→850 tokens (saved 2350 tokens)",
+        "image": "/assets/presentation/demo-0-light.svg",
+        "imageDark": "/assets/presentation/demo-0-dark.svg"
+      }
+    ]
+  },
+  "quickstart": {
+    "title": {
+      "en": "Try it locally",
+      "zh": "本地上手"
+    },
+    "body": {
+      "en": "Apply contract --summary to the complete bundled plan without writing an accepted plan.",
+      "zh": "对完整随仓计划执行 contract --summary，不写入已接受计划。"
+    },
+    "steps": [
+      {
+        "title": {
+          "en": "Install from source",
+          "zh": "从源码安装"
+        },
+        "code": "git clone https://github.com/SuperMarioYL/scopereflex.git\ncd scopereflex\nnpm ci\nnpm run build"
       },
-      "chips": [
-        "› 可选项先砍",
-        "› 辅助文件折回隔壁",
-        "› 关键路径留着"
-      ]
+      {
+        "title": {
+          "en": "Run the included example",
+          "zh": "运行随仓示例"
+        },
+        "code": "node dist/src/index.js contract examples/plan.json --summary"
+      }
+    ]
+  },
+  "limitations": [
+    {
+      "en": "Rules do not inspect the implementation or prove that the smaller plan satisfies the task. Review removed work before accepting it.",
+      "zh": "规则不检查实现，也不证明更小计划满足任务；接受前应检查删除内容。"
     },
     {
-      "title": {
-        "zh": "没守护进程，没 key，没配置文件",
-        "en": "No daemon, no key, no config"
-      },
-      "body": {
-        "zh": "一个 CLI。把代理的计划用 JSON 或 markdown 喂进去，拿回更小的 JSON 计划——直接管道给你已经在跑的任何 harness。不用额外装东西，也没有后台嗡嗡作响。",
-        "en": "One CLI. Feed it your agent's plan as JSON or markdown, get the smaller plan back as JSON — pipe it into whatever harness you already run. Nothing to install beside, nothing humming in the background."
-      },
-      "chips": [
-        "› JSON 或 markdown 进",
-        "› JSON 出，接任意 harness",
-        "› 零后台进程"
-      ]
+      "en": "Token values are heuristics based on file/step counts and different coefficients, not measured output savings.",
+      "zh": "token 值基于文件/步骤数量和不同系数估计，不是实测输出节省。"
+    },
+    {
+      "en": "The demo only reports a contraction. It does not accept a plan or modify source code.",
+      "zh": "示例只报告缩减，不接受计划或修改源码。"
     }
   ],
   "scene": {
-    "kind": "hub-nodes",
-    "nodes": [
-      "Claude Code",
-      "Cursor",
-      "Aider",
-      "Codex"
+    "kind": "neon-graph",
+    "fallback": "/assets/presentation/scene-dark.svg",
+    "fallbackLight": "/assets/presentation/scene-light.svg"
+  },
+  "story": {
+    "intro": {
+      "title": {
+        "en": "A concrete task",
+        "zh": "从实际任务出发"
+      },
+      "body": {
+        "en": "Optional steps and duplicate file entries can make a proposed plan harder to assess. A rule-generated alternative lets you inspect what would be dropped or merged before accepting it.",
+        "zh": "可选步骤与重复文件条目可能让提案更难评估。规则生成的替代方案让你在接受前检查哪些内容被删除或合并。"
+      }
+    },
+    "sections": [
+      {
+        "title": {
+          "en": "Follow the operation",
+          "zh": "处理过程"
+        },
+        "body": {
+          "en": "The parser validates the plan. Ordered rules deduplicate files, merge helper descriptions into sibling indexes, drop optional files and steps, and estimate a shorter output. contract reports the diff; gate can write a contracted plan after a selection.",
+          "zh": "解析器校验计划；有序规则去重文件，把 helper 描述合并到同目录 index，删除可选文件和步骤，再估计较短输出。contract 报告差异，gate 可在选择后写出缩减计划。"
+        },
+        "image": {
+          "light": "/assets/presentation/process-light.svg",
+          "dark": "/assets/presentation/process-dark.svg",
+          "alt": {
+            "en": "Follow the operation",
+            "zh": "处理过程"
+          }
+        }
+      },
+      {
+        "title": {
+          "en": "How ScopeReflex works",
+          "zh": "ScopeReflex 的工作方式"
+        },
+        "body": {
+          "en": "The parser validates the plan. Ordered rules deduplicate files, merge helper descriptions into sibling indexes, drop optional files and steps, and estimate a shorter output. contract reports the diff; gate can write a contracted plan after a selection.",
+          "zh": "解析器校验计划；有序规则去重文件，把 helper 描述合并到同目录 index，删除可选文件和步骤，再估计较短输出。contract 报告差异，gate 可在选择后写出缩减计划。"
+        },
+        "image": {
+          "light": "/assets/presentation/architecture-light.svg",
+          "dark": "/assets/presentation/architecture-dark.svg",
+          "alt": {
+            "en": "How ScopeReflex works",
+            "zh": "ScopeReflex 的工作方式"
+          }
+        }
+      },
+      {
+        "title": {
+          "en": "Connect the pieces",
+          "zh": "输入与输出"
+        },
+        "body": {
+          "en": "The following routes are implemented in the source. Choose the input that matches your task and keep the resulting artifact with your project.",
+          "zh": "以下路径已有源码实现。按任务选择输入，并把生成的结果与项目一起保存。"
+        },
+        "image": {
+          "light": "/assets/presentation/integrations-light.svg",
+          "dark": "/assets/presentation/integrations-dark.svg",
+          "alt": {
+            "en": "Connect the pieces",
+            "zh": "输入与输出"
+          }
+        }
+      }
+    ],
+    "details": [
+      {
+        "title": {
+          "en": "Configuration",
+          "zh": "配置"
+        },
+        "body": {
+          "en": "Mark optional files and steps explicitly in the input. output_length_tokens can supply the original estimate; otherwise the tool estimates it. contract is read-only. gate writes a separate contracted plan on acceptance; --accept bypasses the interactive review.",
+          "zh": "在输入中显式标记可选文件与步骤。output_length_tokens 可提供原始估计，省略时由工具估计。contract 只读；gate 接受后写出独立缩减计划，--accept 跳过交互检查。"
+        }
+      },
+      {
+        "title": {
+          "en": "Further use",
+          "zh": "进一步使用"
+        },
+        "body": {
+          "en": "The CLI exposes the following operations. Commands after the example use your own paths or identifiers.",
+          "zh": "CLI 提供以下操作。示例之外的命令需要替换成你的文件路径或标识。"
+        },
+        "code": "node dist/src/index.js contract examples/plan.json\nnode dist/src/index.js contract examples/plan.json --json\nnode dist/src/index.js gate examples/plan.json"
+      }
     ]
-  },
-  "cta": {
-    "headline": {
-      "zh": "交出你代理本该提的那份 4 文件计划",
-      "en": "Ship the 4-file plan your agent should've proposed"
-    },
-    "sub": {
-      "zh": "一份计划进，一份更小的计划出，你点头裁剪。开源，一条命令跑通。",
-      "en": "One plan in, a smaller plan out, you accept the trim. Open source, runs in one command."
-    },
-    "button": {
-      "zh": "查看 GitHub",
-      "en": "View on GitHub"
-    }
-  },
-  "footer": {
-    "tag": {
-      "zh": "给过度生产的编码代理的“做更少”反射 · 开源 MIT",
-      "en": "The do-less reflex for over-producing coding agents · open source MIT"
-    }
   }
 }
