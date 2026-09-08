@@ -211,5 +211,6 @@
         "code": "node dist/src/index.js contract examples/plan.json\nnode dist/src/index.js contract examples/plan.json --json\nnode dist/src/index.js gate examples/plan.json"
       }
     ]
-  }
+  },
+  "content_version": "v0.1.0"
 }
